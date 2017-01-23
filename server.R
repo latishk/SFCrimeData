@@ -54,7 +54,7 @@ function(input, output, session) {
   
   
   # Here we are processing the data. We need the tally (count) of crimes district wise to plot the stacked bar graph
-  # reactive() creates reactive exressions, when a value changes the exression is updated. We are using this to
+  # reactive() creates reactive expressions, when a value changes the expression is updated. We are using this to
   # update the map when ever the user changed the year. 
   # the '%>%' is called function chaning. 
     dfsum <- sfcrime5 %>% group_by(PdDistrict,Category) %>% tally()
