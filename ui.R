@@ -15,7 +15,7 @@ navbarPage("SF Crime Data", id="nav",
                       draggable = TRUE, top = 60, left = "20", right = "auto", bottom = "auto",
                       width = 400, height = "auto",
                       h2("Sample Data of 10000 rows"),
-                      sliderInput(inputId = "year", label = "Slide to Change the year", value = 2014, min = min(year(sfcrime$Date)), max = 2015),
+                      sliderInput(inputId = "year", label = "Slide to Change the year", value = 2014, min = min(year(sfcrime5$Date)), max = max(year(sfcrime5$Date))),
                       h4("Zoom in and click to see more info")
         )
         
@@ -27,7 +27,7 @@ navbarPage("SF Crime Data", id="nav",
     # plotOutput("districtwiseCrimeDistribution", hover = "plot1_click"),
     # verbatimTextOutput("info"),
     plotlyOutput("districtwiseCrimeDistribution1", width = "100%", height = "700px"),
-    textInput(inputId = "add", label ="Input Address", value = "2300 Block of 24TH AV"),
+    textInput(inputId = "add", label ="Input SF Street address", value = "2300 Block of 24TH AV"),
     numericInput(inputId="k", label = "Input K to show K most likely Crimes based on stats in 1 mile square", value = 5),
     actionButton("go", "Plot"),
     plotlyOutput("k_nearest"),
